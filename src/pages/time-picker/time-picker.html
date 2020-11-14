@@ -1,0 +1,28 @@
+<ion-content padding>
+  <div class="tp_container">
+
+    <div class="tp_header">
+      <ion-label class="muted" color="text-secondary">Hi Mrs. Shinta</ion-label>
+      <ion-label class="heading" bold mr2_line>Choose the most suitable time to be reminded</ion-label>
+    </div>
+    <div class="tp_body">
+      <ion-item no_padding>
+        <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="selectedTime"></ion-datetime>
+      </ion-item>
+      <ion-label text-center color="primary">* tap to change time</ion-label>
+    </div>
+    <div class="tp_footer">
+      <div class="tp_footer_content">
+        <div class="prev" (click)="prev()">
+          <img src="assets/icon/arrow.svg" alt="">
+          <ion-label color="text-secondary">Prev</ion-label>
+        </div>
+        <div class="next" (click)="next()">
+          <ion-label color="text-secondary">Next</ion-label>
+          <button ion-button icon-only><img src="assets/icon/arrow.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

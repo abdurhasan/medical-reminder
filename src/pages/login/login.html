@@ -1,0 +1,30 @@
+<ion-content padding>
+
+  <div class="login_content">
+
+    <div class="login_container" content_center text-center>
+      <div class="login_top">
+        <img src="assets/imgs/logo_medical_r.svg" alt="">
+        <h3 bold>RemindMe</h3>
+        <ion-label mr2_line color="text-secondary">Don't worry about forgetting your medication schedule, we are helping
+          to
+          remind you</ion-label>
+      </div>
+      <div class="login_id">
+        <div class="box">
+          <ion-input type="text" placeholder="Input your Iser ID E.G : Uesle1498skka" [(ngModel)]="username">
+          </ion-input>
+          <button ion-button icon-only [ngClass]="{'warna-ping' : username !== ''}" (click)="nextPage()">
+            <img src="assets/icon/arrow.svg" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="login_footer">
+      <ion-label no-margin text-center>Rahayu Rosmayanti Hakim</ion-label>
+    </div>
+
+  </div>
+  
+</ion-content>

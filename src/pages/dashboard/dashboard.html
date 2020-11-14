@@ -1,0 +1,76 @@
+<ion-content padding>
+
+  <div class="db_header">
+
+    <div class="left">
+      <h3>Hallo {{userData ? userData.fullName : ''}}</h3>
+      <h4>{{ moment(clock).format('DD MMM YYYY  HH:mm:ss')}}</h4>
+    </div>
+
+    <div class="right" (click)="logoutConfirm()">
+      <button ion-icon><img src="assets/icon/logout.svg" alt=""></button>
+      <ion-label no-margin color="text-secondary">Log Out</ion-label>
+    </div>
+
+  </div>
+
+  <div class="db_body">
+    <ion-label>Jadwal minum pil KB</ion-label>
+
+    <div class="db_body_list">
+      <!-- <ion-list no-lines>
+        <ion-item>
+          <ion-label>Pepperoni</ion-label>
+          <ion-checkbox [(ngModel)]="pepperoni"></ion-checkbox>
+          <ion-label item-end right>12:00</ion-label>
+        </ion-item>                
+      </ion-list> -->
+
+      <ion-list *ngFor="let present of presentData; let index=index " no-lines>
+        <ion-item>
+          <ion-label>{{ moment(present.date).format("DD MMMM YYYY") }}</ion-label>
+          <ion-checkbox [disabled]="!sameDay(present.date)" [(ngModel)]="present.isChecked"
+            (click)="updatePresentData(index)"></ion-checkbox>
+          <ion-label item-end right>{{ moment(present.date).format("HH:00") }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="scheduled">
+      <ion-label>Ticked Schedule</ion-label>
+
+      <ion-list *ngFor="let past of pastData" no-lines>
+
+        <ion-item disabled_clicked>
+
+          <ion-label *ngIf="!past.isChecked" class="isNotChecked">
+            <del> {{ moment(past.date).format("DD MMMM YYYY")  }} </del>
+          </ion-label>
+
+          <ion-label *ngIf="past.isChecked" class="isChecked">
+            {{ moment(past.date).format("DD MMMM YYYY")  }}
+          </ion-label>
+
+          <ion-label item-end right *ngIf="!past.isChecked">
+            <del> {{ moment(past.date).format("HH:00") }} </del>
+          </ion-label>
+          <ion-label item-end right *ngIf="past.isChecked"> {{ moment(past.date).format("HH:00") }} </ion-label>
+
+
+        </ion-item>
+
+
+      </ion-list>
+
+    </div>
+
+  </div>
+
+  <ion-fab right bottom *ngIf="consultantWhatsapp">
+    <button ion-fab color="secondary" (click)='OpenUrl()'><img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1021px-WhatsApp.svg.png"
+        alt=""></button>
+  </ion-fab>
+
+
+</ion-content>

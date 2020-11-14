@@ -1,0 +1,23 @@
+<ion-content padding>
+  <div class="dp_container">
+
+    <div class="dp_header">
+      <ion-label class="muted" color="text-secondary">Hi {{userData ? userData.fullName : ''}}</ion-label>
+      <ion-label class="heading" bold mr2_line>Silahkan pilih jadwal minum obat anda</ion-label>
+    </div>
+    <div class="dp_body">
+      <ionic-calendar-date-picker [dayLabelsStyle]="{ 'font-weight': 500, 'font-size': '16px' }" [fromDate]="fromDate"
+        [itemSelectedStyle]="{ 'background': '#ea4c89', 'color': '#f4f4f4 !important', 'border-radius': '50%', 'color': 'white' }"
+        (onSelect)="dateSelected($event)">
+      </ionic-calendar-date-picker>
+    </div>
+    <div class="dp_footer">
+      <div class="dp_footer_content" (click)="next()">
+        <ion-label color="text-secondary">Next</ion-label>
+        <button ion-button icon-only><img src="assets/icon/arrow.svg" alt="">
+        </button>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

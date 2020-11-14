@@ -1,0 +1,56 @@
+page-login {
+    .login_content {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        .login_container {
+            .login_top {
+                ion-label {
+                    line-height: 21px;
+                }
+            }
+            .login_id {
+                .box {
+                    padding: 4px;
+                    display: flex;
+                    border: 1px solid #d4d4d4;
+                    border-radius: 8px;
+                    button.button.button-md.button-default.button-default-md,
+                    button.button.button-ios.button-default.button-default-ios {
+                        background-color: #d4d4d4;
+                        padding: 20px 10px;
+                        border-radius: 4px !important;
+                        box-shadow: none !important;
+                        background: #d4d4d4;
+                        pointer-events: none;
+                    }
+                    button.disable-hover.button.button-md.button-default.button-default-md,
+                    button.disable-hover.button.button-ios.button-default.button-default-ios {
+                        padding: 20px 10px;
+                        border-radius: 4px !important;
+                        box-shadow: none !important;
+                        background: #d4d4d4;
+                        pointer-events: none;
+                    }
+                    .arrow {
+                        background: #d5d5d5;
+                        border-radius: 4px;
+                        padding: 1px 10px;
+                        display: flex;
+                    }
+                }
+            }
+        }
+        .warna-ping {
+            background: color($colors, primary) !important;
+            pointer-events: unset !important;
+        }
+        .login_footer {
+            color: #ea4c89;
+
+            text-align: center;
+            margin-top: -15%;
+        }
+    }
+}

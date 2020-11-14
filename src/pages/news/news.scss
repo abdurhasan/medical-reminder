@@ -1,0 +1,24 @@
+page-news {
+    .list {
+        .list_body {
+            display: flex;
+            margin-bottom: 15px;
+            .list_left {
+                width: 30%;
+                img {
+                    width: 400px;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .list_right {
+                padding: 15px 0;
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                margin-left: 15px;
+            }
+        }
+    }
+}

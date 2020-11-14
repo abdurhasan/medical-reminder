@@ -1,0 +1,12 @@
+page-loading-component {
+    ion-spinner {
+        position: relative;
+        display: inline-block;
+        width: 64px !important;
+        height: 64px !important;
+        margin-bottom: 16px;
+    }
+    ion-spinner * {
+        stroke: color($colors, primary) !important;
+    }
+}
